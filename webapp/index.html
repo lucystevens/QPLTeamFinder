@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="teamfinder">
+<meta charset="UTF-8"> 
+
+	<head>
+		<title>QPL Team finder</title>
+		<script type="text/javascript" src="js/angular.js"></script>
+		<script type="text/javascript" src="js/angular-cookies.js"></script>
+		<script type="text/javascript" src="angular/directives.js"></script>
+		<script type="text/javascript" src="angular/app.js"></script>
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/global.css" />
+		<link rel="stylesheet" type="text/css" href="css/devices.css" />
+		<link rel="stylesheet" type="text/css" href="css/ubuntu-font.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+	</head>
+
+	<body>
+	
+		<div class="loginbox">
+			<form name="form" ng-controller="PostcodeController as controller" ng-submit="form.$valid && controller.request()" novalidate>
+
+				<div class="divstyle">
+					<a href="https://quidditchpremierleague.com/">
+						<img class="logo" src="https://quidpremleague.files.wordpress.com/2016/11/web-logo-whiteartboard-1.png" />
+					</a>
+				</div>
+
+				<div class="divstyle">
+					<h1 class="ubuntu">Team finder</h1>
+				</div>
+				
+				<div class="divstyle" ng-show="controller.team!=''">
+					<h3 ng-hide="controller.teamFound">{{controller.team}}</h3>
+					<img class="team-image" src="images/{{controller.img}}" ng-show="controller.teamFound" />
+				</div>
+				
+				<div class="divstyle" ng-show="form.input.$dirty && form.$invalid">
+					<h3 class="error ubuntu">Invalid postcode</h3>
+				</div>
+				
+				<div class="postcode-field">
+					<label for="postcode-input" class="ubuntu" >Enter your postcode</label>
+					<input name="input" class="form-control" id="postcode-input" ng-model="controller.postcode" ng-change="controller.team=''" required postcode-validation/>
+				</div>
+				
+				<div class="center">
+					<input style="font-size:18px;" class="btn btn-default" type="submit" value="Check" />
+					<button style="font-size:18px;" ng-click="controller.location()" class="btn btn-default">Detect Location</button>
+				</div>
+				<div class="filler"></div>
+		</div>
+		<div class="footer">
+		
+					<div class="textwidget"><p>All photos courtesy of Jessica Cornelius.</p>
+					<p>Teamfinder development courtesy of Luke Stevens</p>
+					<p>Design courtesy of Lizzie Walton at&nbsp;<a href="https://elsie.myportfolio.com/projects">https://elsie.myportfolio.com/projects</a></p>
+					<p>© Quidditch Premier League 2016 – 2017. QPL and its activities are not licensed by, sponsored by or associated with Warner Bros., J.K. Rowling, or their affiliates. ‘Quidditch,’ ‘Harry Potter,’ and all related names, characters and indicia are trademarks of and © Warner Bros. – Harry Potter publishing rights © J.K. Rowling.</p>
+					
+	
+		</div>
+
+	</body>
+
+</html>

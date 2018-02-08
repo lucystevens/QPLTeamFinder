@@ -1,0 +1,46 @@
+/* desktop*/
+@media only screen 
+and (min-device-width : 1000px) {
+
+	body{
+		background-color: #252858;
+	}
+
+	.loginbox{
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+
+	.footer{
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+
+	h1 {
+		font-size: 48px;
+	}
+
+}
+
+@media only screen 
+and (min-device-height : 1080px) {
+
+	body{
+		overflow: hidden;
+	}
+
+	.loginbox{
+
+		height:9999px;
+	}
+
+	.footer{
+		position: absolute;
+		bottom:0px;
+	}
+	
+	.filler{
+		height: 10px;
+	}
+
+}
