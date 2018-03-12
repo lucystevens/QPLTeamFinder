@@ -2,3 +2,4 @@
 java/target/**
 java/.settings/**
 .class
+java/src/main/resources/properties/application.properties
